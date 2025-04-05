@@ -31,7 +31,17 @@ def consecutive_ints(ints):
 
 
 def median_vs_mean(nums):
-    ...
+    nums.sort()
+    n = len(nums)
+
+    mean = sum(nums) / n
+
+    if n % 2 == 1:
+        median = nums[n // 2] # odd length
+    else:
+        median = (nums[n // 2 - 1] + nums[n // 2]) / 2 # even length
+    
+    return median <= mean
 
 
 # ---------------------------------------------------------------------
@@ -40,7 +50,10 @@ def median_vs_mean(nums):
 
 
 def n_prefixes(s, n):
-    ...
+    prefixes = [s[:i] for i in range(1, n + 1)]
+    prefixes.reverse()
+    return ''.join(prefixes)
+
 
 
 # ---------------------------------------------------------------------
@@ -49,7 +62,12 @@ def n_prefixes(s, n):
 
 
 def exploded_numbers(ints, n):
-    ...
+    all_nums = []
+    
+    for num in ints:
+        all_nums += list(range(num - n, num + n + 1))
+
+    
 
 
 # ---------------------------------------------------------------------
