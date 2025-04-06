@@ -83,7 +83,13 @@ def exploded_numbers(ints, n):
 
 
 def last_chars(fh):
-    ...
+    results = ''
+    for i in fh:
+        i = i.rstrip('\n')
+        if i:
+            results += i[-1]
+
+    return results
 
 
 # ---------------------------------------------------------------------
