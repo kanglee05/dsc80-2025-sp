@@ -67,7 +67,14 @@ def exploded_numbers(ints, n):
     for num in ints:
         all_nums += list(range(num - n, num + n + 1))
 
-    
+    max_len = len(str(max(all_nums)))
+
+    result = []
+    for num in ints:
+        exploded = [str(i).zfill(max_len) for i in range(num - n, num + n + 1)]
+        result.append(' '.join(exploded))
+
+    return result
 
 
 # ---------------------------------------------------------------------
