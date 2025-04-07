@@ -98,10 +98,11 @@ def last_chars(fh):
 
 
 def add_root(A):
-    ...
+    return A + np.sqrt(np.arange(len(A)))
 
 def where_square(A):
-    ...
+    square_roots = np.sqrt(A)
+    return square_roots == np.floor(square_roots)
 
 
 # ---------------------------------------------------------------------
